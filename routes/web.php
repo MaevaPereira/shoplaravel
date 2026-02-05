@@ -6,17 +6,23 @@ Route::get('/hello', function () {
     return ('Hello Laravel!');
 });
 
+
 use App\Http\Controllers\PageController;
 
 Route::get('/home', [PageController::class, 'home'])
-->name('home');
+    ->name('home');
 
 Route::get('/about', [PageController::class, 'about'])
-->name('about');
+    ->name('about');
+
+Route::get('/app', [PageController::class, 'app'])
+    ->name('app');
+
 
 use App\Http\Controllers\ProductController;
 
-Route::get('/products/{id}', function ($id) {
-    return 'product :' . $id; //also work w/: return "product n° : $id";
-})
-->name('products.show'); //nomme la route
+Route::get('/boutique', [ProductController::class, 'show'])
+    ->name('boutique');
+
+Route::get('/index', [ProductController::class, 'tab'])
+    ->name('index');
