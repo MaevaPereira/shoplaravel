@@ -35,8 +35,8 @@ class CategorySeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'name' => 'Objets Rares',
-                'slug' => 'objets-rares',
+                'name' => 'Objets',
+                'slug' => 'objets',
                 'description' => '',
                 'created_at' => now(),
                 'updated_at' => now(),
