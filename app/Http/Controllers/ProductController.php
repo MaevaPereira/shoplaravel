@@ -11,10 +11,9 @@ class ProductController extends Controller
 
         $shop = [
             'name' => 'Poké Shop',
-            'stock' => 3,
+            'stock' => 151,
             'etat' => true
         ];
-
 
         return view('boutique', [
             'shop' => $shop,
@@ -31,8 +30,6 @@ class ProductController extends Controller
             ['id' => 5, 'name' => 'Master ball', 'price' => 1000000000],
         ];
 
-        return view('products/index', [
-            'products' => $products,
-        ]);
+        return view('products/index', compact('products'));
     }
 }

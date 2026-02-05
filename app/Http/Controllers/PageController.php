@@ -6,14 +6,22 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
+    /*
     public function home()
     {
-        //return view('boutique');
-        return redirect()->route('products.show', ['id' => 777]);
+        return view('home');
+        //return view('hello');
+        //return redirect()->route('products.show', ['id' => 777]);
     }
+*/
 
     public function about()
     {
-        return 'description de la boutique';
+        return view('layouts/about');
+    }
+
+    public function app()
+    {
+        return view('layouts/app');
     }
 }
