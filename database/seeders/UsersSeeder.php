@@ -16,12 +16,20 @@ class UsersSeeder extends Seeder
     {
         DB::table('users')->insert([
         [
-        'name' =>'dfg',
-        'email'=>'email@mail.com',
-        'password'=>'password',
+        'name' =>'Ash',
+        'email'=>'ash@kanto.com',
+        'password'=>'pikachu',
         'created_at' => now(),
         'updated_at' => now(),
+        ],
+        [
+            'name' =>'Giovanni',
+            'email'=>'giovanni@teamrocket.com',
+            'password'=>'leaderR0cket',
+            'created_at' => now(),
+            'updated_at' => now(),
         ]
         ]);
     }
 }
+

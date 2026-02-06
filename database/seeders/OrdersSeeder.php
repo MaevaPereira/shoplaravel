@@ -19,6 +19,12 @@ class OrdersSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+            [
+                'users_id'=> 2,
+                'total' => 10,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
         ]);
     }
 }

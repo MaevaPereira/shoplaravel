@@ -15,8 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('category_id')->constrained(
                 table: 'category',
-                indexName: 'category_id'
-            )->onUpdate('cascade')->onDelete('cascade');
+                indexName: 'category_id');
             $table->string('name');
             $table->string('slug')->unique();
             $table->text('description')->nullable();

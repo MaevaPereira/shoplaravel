@@ -15,8 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('users_id')->constrained(
                 table: 'users',
-                indexName: 'users_id'
-            )->onUpdate('cascade')->onDelete('cascade');
+                indexName: 'users_id');
             $table->decimal('total', 10, 2);
             $table->boolean('pending')->default(false);
             $table->boolean('paid')->default(false);
