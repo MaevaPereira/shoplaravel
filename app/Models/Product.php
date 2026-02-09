@@ -22,6 +22,7 @@ class Product extends Model
     ];
 
     // Colonnes cachées lors de la sérialisation JSON
+    //
     protected $hidden = [];
 
     // Conversion automatique des types

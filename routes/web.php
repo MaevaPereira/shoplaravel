@@ -21,7 +21,10 @@ Route::get('/app', [PageController::class, 'app'])
 
 use App\Http\Controllers\ProductController;
 
-Route::get('/boutique', [ProductController::class, 'show'])
+Route::get('/product/{id}', [ProductController::class, 'show'])
+    ->name('product.show');
+
+Route::get('/boutique', [ProductController::class, 'shop'])
     ->name('boutique');
 
 Route::get('/index', [ProductController::class, 'tab'])
