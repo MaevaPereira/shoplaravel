@@ -3,15 +3,16 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
-class Categories extends Model
+use Illuminate\Database\Eloquent\Relations\HasMany;
+class Category extends Model
 {
     // Colonnes autorisées pour l'assignation de masse
-    protected $fillable = [
-        'name',
-        'slug',
-        'description',
-    ];
+    protected $fillable = ['name', 'slug', 'description'];
+     //Une catégorie a plusieurs produits
+    public function products(): HasMany
+    {
+        return $this->hasMany(Product::class);
+    }
 
     // Colonnes cachées lors de la sérialisation JSON
     protected $hidden = [];

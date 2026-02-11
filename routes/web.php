@@ -17,17 +17,17 @@ Route::get('/app', [PageController::class, 'app'])
     ->name('app');
 
 
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ShopController;
 
-//Route::get('/product/{id}', [ProductController::class, 'show'])
+//Route::get('/product/{id}', [ShopController::class, 'show'])
   //  ->name('product.show');
 
-Route::get('/boutique', [ProductController::class, 'shop'])
+Route::get('/boutique', [ShopController::class, 'shop'])
     ->name('boutique');
 
-//Route::get('/index', [ProductController::class, 'tab'])
+//Route::get('/index', [ShopController::class, 'tab'])
   //  ->name('index');
 
-use App\Http\Controllers\ResourceController;
+use App\Http\Controllers\ProductController;
 
-Route::resource('products', ResourceController::class);
+Route::resource('products', ProductController::class);

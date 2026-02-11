@@ -12,7 +12,7 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('category')->insert([ //enregistre dans la BDD
+        DB::table('categories')->insert([ //enregistre dans la BDD
             [
                 'name' => 'Poké Balls',
                 'slug' => 'poke-balls',

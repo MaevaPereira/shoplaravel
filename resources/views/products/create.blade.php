@@ -58,8 +58,6 @@
         <div class="mb-5">
             <input type="checkbox" id="active" name="active" />
             <label for="active">Active</label>
-            <input type="checkbox" id="inactive" name="inactive" />
-            <label for="inactive">Inactive</label>
         </div>
 
         <button type="submit" class="bg-red-600 text-white px-4 py-2 rounded">
