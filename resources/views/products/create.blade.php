@@ -1,6 +1,7 @@
 @extends('layouts.app')
-
+@section('title', 'create')
 @section('content')
+
     <h1 class="text-2xl font-bold mb-6">Nouveau produit</h1>
 
     <form action="{{ route('products.store') }}" method="POST" class="max-w-lg">
@@ -49,14 +50,6 @@
         <div class="mb-4">
             <label for="stock" class="block font-medium mb-1">Stock</label>
             <input type="number" name="stock" id="stock"
-                   value="{{ old('name') }}"
-                   class="w-full border rounded px-3 py-2"
-                   required>
-        </div>
-
-        <div class="mb-4">
-            <label for="created_at" class="block font-medium mb-1">Created at</label>
-            <input type="date" name="created_at" id="created_at"
                    value="{{ old('name') }}"
                    class="w-full border rounded px-3 py-2"
                    required>
