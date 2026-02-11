@@ -9,8 +9,10 @@
 <h2><br> <strong>Notre séléction de poké balls, baies, CT, objets et fossils :</strong> </h2>
 
 @forelse($products as $product)
-<p> <br>{{$product->category_id }} -  <strong>{{ $product->name }}</strong>  :  {{ $product->description }}
-    <br>Prix: {{ $product->price }} ₽ <br>En stock: {{ $product->stock }}</p>
+<p>
+    <br>- <strong>{{ $product->name }}</strong><em> ({{ $product->category->name }})</em> : {{ $product->description }}
+    <br>Prix: {{ $product->price }} ₽ <br>En stock: {{ $product->stock }}
+</p>
 @empty
 <p>Aucun produit trouvé.</p>
 @endforelse
