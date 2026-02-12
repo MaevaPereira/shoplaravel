@@ -9,7 +9,6 @@ Route::get('/hello', function () {
 
 use App\Http\Controllers\PageController;
 
-
 Route::get('/about', [PageController::class, 'about'])
     ->name('about');
 
@@ -28,6 +27,12 @@ Route::get('/boutique', [ShopController::class, 'shop'])
 //Route::get('/index', [ShopController::class, 'tab'])
   //  ->name('index');
 
+use App\Http\Controllers\CategoryController;
+Route::get('/category/{id}', [CategoryController::class, 'show'])
+->name('category');
+
+
 use App\Http\Controllers\ProductController;
 
 Route::resource('products', ProductController::class);
+

@@ -38,7 +38,10 @@
         <input type="number" name="stock" value="{{ old('stock', $product->stock) }}">
     </div>
 
-    <button type="submit" class="bg-red-600 text-white px-4 py-2 rounded">Mettre à jour</button>
+    <input type="checkbox" id = "active" name="active" value="1">
+    <label for="active" class="block font-medium mb-1">Active</label>
+
+    <br><button type="submit" class="bg-red-600 text-white px-4 py-2 rounded">Mettre à jour</button>
 </form>
 
 

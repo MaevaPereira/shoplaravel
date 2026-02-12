@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Support\Facades\DB;
 
@@ -53,7 +54,6 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
 
         return view('product',[
-
             'product' => $product,
         ]);
     }
@@ -79,15 +79,6 @@ class ProductController extends Controller
             'price'=> $request->price,
             'stock'=> $request->stock,
         ]);
-
-        /*$request->validate([ //On met à jour les informations du Post
-            'category_id' => ['required', 'integer'],
-            'name' => ['required', 'string', 'max:255'],
-            'slug'=>['required', 'string', 'max:255'],
-            'description'=> ['required', 'string', 'max:255'],
-            'price'=> ['required', 'integer'],
-            'stock'=> ['required', 'integer'],
-        */
 
         return redirect()->route('products.index')
             ->with('success', 'Produit modifié avec succès !');
