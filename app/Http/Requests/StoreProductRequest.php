@@ -28,7 +28,6 @@ class StoreProductRequest extends FormRequest
             'slug' => 'required|string|max:255|unique:products,slug',
             'price' => 'required|numeric|min:0',
             'stock' => 'required|integer|min:0',
-            'active' => 'required|boolean',
         ];
     }
 
