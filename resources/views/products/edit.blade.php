@@ -8,10 +8,23 @@
 
     <h1 class="text-2xl font-bold mb-6">Modifier / Supprimer produit</h1>
 
+    <label for="category" class="block font-medium mb-1">Category :</label>
+
+    <select name="category_id" id="category_id">
+        @foreach($categories as $category)
+            <option value="{{ $category->id }}"
+                {{old('category_id',  $product->category_id) == $category->id ? 'selected' : '' }} >
+                {{ $category->name }}
+            </option>
+        @endforeach
+    </select>
+
+    <!--
     <div class="mb-4">
         <label for="category_id" class="block font-medium mb-1">Category ID</label>
         <input type="text" name="category_id" value="{{ old('category_id', $product->category_id) }}">
     </div>
+    -->
 
     <div class="mb-4">
         <label for="name" class="block font-medium mb-1">Nom</label>

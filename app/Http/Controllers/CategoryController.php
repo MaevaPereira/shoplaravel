@@ -9,8 +9,11 @@ use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
+
+
     public function show(string $id)
     {
+
         $category = Category::with('products')->findOrFail($id);
 
         return view('category',[

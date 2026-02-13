@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\StoreProductRequest;
 
 class ProductController extends Controller
 {
@@ -25,7 +26,8 @@ class ProductController extends Controller
 
     public function create()
     {
-        return view('products.create');
+        $categories = Category::all();
+        return view('products.create' , compact('categories'));
     }
 
     /**
@@ -33,18 +35,22 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        Product::create([
-        'category_id' => $request->category_id,
-        'name' => $request->name,
-        'slug'=> $request->slug,
-        'description'=> $request->description,
-        'price'=> $request->price,
-        'stock'=> $request->stock,
+        // Validation des données
+        $validated = $request->validate([
+            'category_id' => 'required|exists:categories,id',
+            'name' => 'required|string|max:255',
+            'price' => 'required|numeric|min:0',
+            'description' => 'nullable|string',
+            'stock' => 'required|integer|min:0',
+            'active' => 'required|boolean',
         ]);
 
+        // Si on arrive ici, les données sont valides
+        Product::create($validated);
         return redirect()->route('products.index')
             ->with('success', 'Produit créé avec succès !');
           //->with('error', 'Une erreur est survenue.');
+
     }
     /**
      * Display the specified resource.
@@ -63,7 +69,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('products.edit', compact('product'));
+        $categories = Category::all();
+        return view('products.edit', compact('product', 'categories'));
     }
 
     /**
@@ -72,6 +79,7 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         $product->update([ //On met à jour les informations du Post
+
             'category_id' => $request->category_id,
             'name' => $request->name,
             'slug'=> $request->slug,

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Category extends Model
 {
     // Colonnes autorisées pour l'assignation de masse
-    protected $fillable = ['name', 'slug', 'description'];
+    protected $fillable = ['name', 'slug', 'description', 'id'];
      //Une catégorie a plusieurs produits
     public function products(): HasMany
     {
